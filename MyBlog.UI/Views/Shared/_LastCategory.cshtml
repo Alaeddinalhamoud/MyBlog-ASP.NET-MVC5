@@ -1,0 +1,42 @@
+﻿
+
+@model IEnumerable<MyBlog.Data.Category>
+
+
+
+
+
+
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr class="navbar-default">
+            <th >Category</th>
+
+        </tr>
+    </thead>
+    <tbody style="background-color:rgba(255,255,255,0.885);">
+        @foreach (var item in Model)
+            {
+            <tr>
+
+                <td>
+
+                    @Html.ActionLink(item.CategoryName, "PostByCategory", "Post",
+                   new {
+                       category = @item.CategoryId,
+                       page = 1
+                   },null)
+                
+                      @* @Html.DisplayFor(modelItem => item.CategoryName) *@ 
+                    
+                    <span style="float:right;" class="badge">
+                        @item.Frequence
+                    </span>
+
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

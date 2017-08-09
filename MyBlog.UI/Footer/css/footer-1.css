@@ -1,0 +1,243 @@
+
+/*========= This is Footer 1 style =========*/
+ 
+.myf a {
+	color: #f0f0f0;
+}
+.myf a:hover, .myf a:focus {
+	color: #ccc;
+	text-decoration: none;
+}
+.myf a, .myf a:focus, .myf a:hover, .myf a:active, .myf button, .myf button:hover {
+	outline: 0 !important;
+}
+/*== Footer flat color ==*/
+.myf .bg-color {
+	background: #333;
+	width:100%;
+	height:auto;
+	display:block;
+ position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.myf .footer-corner
+{
+	background: url("../images/corner-bottom.png") no-repeat left bottom,url("../images/corner-upper.png") no-repeat right top;
+	
+}
+/*== Footer texture color ==*/
+.myf .bg-texture {
+	background: url('../images/texture-4.png') repeat center center fixed;
+	width:100%;
+	height:auto;
+	display:block;
+	position:relative;
+	left: 0;
+	right: 0;
+	bottom:0;
+
+}
+
+/*== Footer background color ==*/
+.myf .bg-background {
+	background: url('../images/bg-2.png') repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width:100%;
+	height:auto;
+	display:block;
+	position: relative;
+	left: 0;
+	right: 0;
+		bottom:0;
+
+}
+/*== Footer gradient color ==*/
+.myf .bg-gradient {
+	background: -moz-radial-gradient(center, ellipse cover, #800080 0%, #000000 100%); /* ff3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #800080), color-stop(100%, #000000)); /* safari4+,chrome */
+	background: -webkit-radial-gradient(center, ellipse cover, #800080 0%, #000000 100%); /* safari5.1+,chrome10+ */
+	background: -o-radial-gradient(center, ellipse cover, #800080 0%, #000000 100%); /* opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, #800080 0%, #000000 100%); /* ie10+ */
+	background: radial-gradient(ellipse at center, #800080 0%, #000000 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800080', endColorstr='#000000', GradientType=1 ); /* ie6-9 */
+	position: relative;
+	left: 0;
+	right: 0;
+		bottom:0;
+		display:block;
+
+}
+
+
+.myf footer {
+	font-weight: 500;
+	color: #eaeaea;
+}
+.myf .bg-gradient footer {
+	border-top: 5px solid #9F0A9F;
+}
+.myf .bg-background footer {
+	border-top: 5px solid #2D6774;
+}
+.myf footer a {
+ color: #f0f0f0;
+}
+.myf footer a:hover, .myf footer a:focus {
+	color: #f0f0f0;
+	text-decoration: underline;
+}
+.myf footer .container {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.myf footer .logo {
+	width: 100px;
+	margin-bottom: 15px;
+}
+.myf footer .social-icons.light-icons a {
+	background-color: #3c3c3e;
+}
+.myf footer .social-icons.light-icons a:hover {
+	background-color: #353536 !important;
+}
+@media screen and (max-width: 768px) {
+ .myf footer .container {
+ padding: 30px 15px;
+}
+}
+.myf .footer-heading {
+	margin: 0 0 13px 0;
+	font-size: 16px;
+	line-height: 2;
+	color: #f0f0f0;
+}
+h3.footer-heading:first-letter
+{
+	border-bottom: 4px double #ccc;
+}
+.myf .footer-nav > li {
+	margin-bottom: 10px;
+}
+.myf .copyright {
+	padding: 15px 0;
+	background-color: rgba(12, 12, 12, 0.2);
+	font-size: 12px;
+	line-height: 10px
+}
+.myf .footer-minimal .copyright {
+	border: none !important;
+	font-size: 11px;
+	padding-bottom: 0;
+	background-color: transparent;
+}
+
+/* social connect icons */
+.myf ul.social-icons li a {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	width: 47px;
+	height: 50px;
+	font-size: 24px;
+	color: #f0f0f0;
+	text-align: center;
+	-moz-box-shadow: 0 0 3px #888;
+	-webkit-box-shadow: 0 0 3px#888;
+	box-shadow: 0 0 3px #888;
+}
+.myf ul.social-icons li a.github-bg:hover, .myf ul.social-icons li a.github-bg:focus {
+	background-color: #ccc;
+}
+.myf ul.social-icons li a.facebook-bg:hover, .myf ul.social-icons li a.facebook-bg:focus {
+	background-color: #344f98;
+}
+.myf ul.social-icons li a.twitter-bg:hover, .myf ul.social-icons li a.twitter-bg:focus {
+	background-color: #138bee;
+}
+.myf ul.social-icons li a.googleplus-bg:hover, .myf ul.social-icons li a.googleplus-bg:focus {
+	background-color: #d73925;
+}
+.myf ul.social-icons li a.rss-bg:hover, .myf ul.social-icons li a.rss-bg:focus {
+	background-color: #e65c00;
+}
+.myf ul.social-icons li a.youtube-bg:hover, .myf ul.social-icons li a.youtube-bg:focus {
+	background-color: #c4302b;
+}
+.myf ul.social-icons li a.linkedin-bg:hover, .myf ul.social-icons li a.linkedin-bg:focus {
+	background-color: #0e76a8;
+}
+.myf ul.social-icons li a i {
+	position: relative;
+	top: 8px;
+}
+/* newsletter form */
+.myf .newsletter-form {
+	margin-top: 20px;
+}
+.myf .newsletter-form .form-control {
+	font-size: 14px;
+}
+.myf .newsletter-form .input-group-lg > .form-control, .myf .newsletter-form .input-group-lg > .input-group-btn > .btn {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+}
+.myf .newsletter-form .input-group-lg > .form-control {
+	-moz-border-radius-topright: 0;
+	-webkit-border-top-right-radius: 0;
+	border-top-right-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-bottom-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background: #414143;
+	outline: none;
+}
+.myf .bg-gradient .newsletter-form .input-group-lg > .form-control, .myf .bg-background .newsletter-form .input-group-lg > .form-control {
+	background: rgba(12, 12, 12, 0.5);
+}
+.myf .newsletter-form .input-group-lg > .form-control:focus {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.myf .newsletter-form .input-group-lg > .input-group-btn > .btn {
+	-moz-border-radius-topleft: 0;
+	-webkit-border-top-left-radius: 0;
+	border-top-left-radius: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
+	background-color: #406da4;
+	font-size: 14px;
+	padding: 10px;
+	min-width: 93px;
+}
+.myf .newsletter-form .input-group-lg > .input-group-btn > .btn:hover, .myf .newsletter-form .input-group-lg > .input-group-btn > .btn:focus {
+	background-color: #396192;
+}
+.myf .newsletter-form .input-group-lg > .input-group-btn > .btn i {
+	display: none;
+}
+.myf .newsletter-form .input-group-lg > .input-group-btn > .btn.loading i {
+	display: inline;
+}
+.myf .newsletter-form .input-group-lg > .input-group-btn > .btn.loading span {
+	display: none;
+}
+.myf .newsletter-form .input-group-lg .input-group-btn:last-child > .btn {
+	margin-left: 0;
+}
+.myf .form-control {
+	color: #f0f0f0;
+}
+.myf .social-connect
+{
+	padding-top:15px;
+}

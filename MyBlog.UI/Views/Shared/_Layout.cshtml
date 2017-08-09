@@ -1,0 +1,185 @@
+﻿@using System.Configuration;
+@{ 
+    string _DisplayFbWidget = ConfigurationManager.AppSettings["DisplayFbWidget"];
+    string _DisplayTwWidget = ConfigurationManager.AppSettings["DisplayTwWidget"];
+    string _WebsiteRoot=  HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Alaeddin Alhamoud</title>
+    @Styles.Render("~/Content/Loadme")
+    @Styles.Render("~/Content/BootStrap")
+
+    @Styles.Render("~/Content/font-awesome")
+    @Styles.Render("~/Content/Site")
+    @Styles.Render("~/Content/CSS-Footer")
+    @Styles.Render("~/Content/CK-school_book")
+ 
+   
+    
+    
+</head>
+<body >
+    <div id="Loading">
+        <div class="loadmeRect">
+            <div class="loadmeRectChild loadmeRect1"></div>
+            <div class="loadmeRectChild loadmeRect2"></div>
+            <div class="loadmeRectChild loadmeRect3"></div>
+            <div class="loadmeRectChild loadmeRect4"></div>
+            <div class="loadmeRectChild loadmeRect5"></div>
+        </div>
+        <div class="loadme-mask"></div>
+    </div>
+    <div>
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="~/Home/index">
+                        <i class="fa fa-medium fa-1x" aria-hidden="true"></i>y Blog
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="~/Home/index">Home</a></li>
+                        <li><a href="~/Page/Details/2">Projects</a></li>
+                        <li><a href="~/Page/Details/1">About</a></li>
+
+                       
+                        <!-- Google Custom Search Start -->
+                        <form class="navbar-form navbar-right " action="http://www.google.co.uk" id="cse-search-box"  role="search">
+                            <div class="input-group">
+                                <input type="hidden" name="cx" value="partner-pub-2337493261869888:4568312859" />
+                                <input type="hidden" name="ie" value="UTF-8" />
+                                <input type="text" name="q" size="20"  class="form-control"  />
+                                <div class="input-group-btn">
+                                    
+                                    <button class="btn btn-default" type="submit" name="sa"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <!--  Google Custom Search Enad -->
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="center-block">
+            @RenderBody()
+        </div>
+
+        <!-- My footer class -->
+        <div class="myf">
+            <!-- FOOTER -->
+            <div class="bg-texture">
+                <footer>
+                    <div class="container animatedParent">
+                        <div class="row animated fadeInDownShort go">
+                            <div class="col-md-3">
+                                <!-- COLUMN  -->
+
+                                <div class="row margin-bottom-30px" style="display:@_DisplayTwWidget;">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled footer-nav">
+                                            @Html.Action("GetWidget", "Widget", new { Id = 2 })
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- END COLUMN 1 -->
+                            </div>
+                            <div class="col-md-4">
+                                <!-- COLUMN 2 -->
+
+                                <div class="row margin-bottom-30px">
+                                    <div class="col-xs-6" style="display:@_DisplayFbWidget;">
+                                        <ul class="list-unstyled footer-nav">
+                                            @Html.Action("GetWidget", "Widget", new { Id = 1 })
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- END COLUMN 2 -->
+                            </div>
+                            <div class="col-md-5">
+                                <!-- COLUMN 3 -->
+
+                                <div class="social-connect">
+                                    <h3 class="footer-heading">GET CONNECTED</h3>
+                                    <ul class="list-inline social-icons">
+                                        <li><a href="https://github.com/Alaeddinalhamoud" class="github-bg"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="https://www.facebook.com/alaeddinalhamoud" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/aladinhamod" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://plus.google.com/+AlaeddinAlhamoud" class="googleplus-bg"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCKjc_Y27mfa253dBfbBlhYA" class="youtube-bg"><i class="fa fa-youtube"></i></a></li>
+                                        <li><a href="https://uk.linkedin.com/in/alaeddin-alhamoud-8ab73333" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="@_WebsiteRoot/Home/Feed" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- END COLUMN 3 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- COPYRIGHT -->
+                    <div class="text-center copyright"> ©2016 Alaeddin Alhamoud. All Rights Reserved. </div>
+                    <!-- END COPYRIGHT -->
+                    <!-- OnLineUser -->
+                    <div class="text-center copyright"><i class="fa fa-users" aria-hidden="true"></i> Total Users :@ApplicationInstance.Application["TotalofVisitor"] </div>
+                    <!-- End OnLineUser -->
+                </footer>
+            </div>
+        </div><!-- END FOOTER -->
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/AJAX")
+        @Scripts.Render("~/bundles/LoadMeAJAX")
+        <script>
+           
+
+            $(document).ready(function () {
+
+                $("#Loading").hide();
+
+            });
+        </script>
+       
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/ckeditor")
+        @Scripts.Render("~/bundles/modernizr")
+
+        @Scripts.Render("~/bundles/FooterJs")
+        @Scripts.Render("~/bundles/MyFile")
+        @Scripts.Render("~/bundles/ImgUploder") 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script type="text/javascript" src="http://www.google.co.uk/coop/cse/brand?form=cse-search-box&amp;lang=ar"></script>
+        
+        @RenderSection("scripts", required: false)
+       
+      
+
+        <script src="~/scripts/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+        <!--google analytics-->
+        @Html.Action("GetWidget", "Widget", new { Id = 5 })
+        <!--google analytics-->
+
+    </div>
+</body>
+</html>

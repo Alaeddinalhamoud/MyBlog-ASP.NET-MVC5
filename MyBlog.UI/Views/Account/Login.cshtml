@@ -1,0 +1,91 @@
+﻿@model MyBlog.UI.Models.LoginViewModel
+@using System.Configuration;
+@{
+    ViewBag.Title = "Log in";
+    string _googlesitekey=  ConfigurationManager.AppSettings["GoogleSitekey"];
+    string _DisplayFBLogin = ConfigurationManager.AppSettings["DisplayFBLogin"];
+    string _DisplayRegister = ConfigurationManager.AppSettings["DisplayRegister"];
+}
+
+
+<div class="container body-content-pages">
+    <h2>@ViewBag.Title.</h2>
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                   <div class="col-md-10 input-group">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        </span>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                      
+                    </div>
+                    <div class="col-md-10">
+                      
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                   
+                </div>
+                <div class="form-group">
+                    
+                    <div class="col-md-10 input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control",placeholder="Password"})
+                        
+                    </div>
+                    <div class="col-md-10" >
+                       
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="g-recaptcha" data-sitekey=@_googlesitekey></div>
+                <div class="form-group">
+                    <div class="col-md-10 col-sm-offset-2 ">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 input-group">
+                        <button type="submit" class="btn btn-default"  aria-label="Left Align">
+                            <span class="fa fa-sign-in" aria-hidden="true"> </span> Log in
+                        </button>
+                    </div>
+                </div>
+                <p style="display:@_DisplayRegister;">
+                    @Html.ActionLink("Register as a new user", "Register")
+                </p>
+                @* Enable this once you have account confirmation enabled for password reset functionality*@
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            <p>Speace For Social </p>
+            <div style="display:@_DisplayFBLogin;">
+                <a class="btn btn-primary" href="~/Account/Facebook">
+                    <span class="fa fa-facebook-official"></span>
+                    Login Facebook
+
+                </a>
+            </div>
+          @*  @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl }) *@
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+}

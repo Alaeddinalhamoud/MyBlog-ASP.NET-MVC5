@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+}
+
+
+
+
+<script src="~/scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<div class="container-fluid">
+    <div class="form-horizontal">
+        <h4> <i class="fa fa-fw fa fa-bar-chart-o fa-2x"></i> Charts Report</h4>
+        <div class="form-group">
+            <div class="col-md-6 alert-danger">
+                <label>Year:</label>
+                <input id="year" type="number" value="2017" min="2000" max="2050" step="1" />
+                <button id="btnGo" class="btn btn-primary">Go</button>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="col-md-6">
+               
+                @Html.Action("PostCommentChart", "Chart")
+            </div>
+            <div class="col-md-6">
+                @Html.Action("AllDatabaseChart", "Chart")
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <div class="col-md-6">
+
+                @Html.Action("UserMonthlyChart", "Chart")
+            </div>
+            <div class="col-md-6">
+             @Html.Action("ImageMonthlyChart", "Chart")
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--End Category-->
+    @*<div class="col-md-6">
+                <div id="chart_Post_div" style="width: 450px; height: 300px;"></div>
+            </div>
+        </div>*@

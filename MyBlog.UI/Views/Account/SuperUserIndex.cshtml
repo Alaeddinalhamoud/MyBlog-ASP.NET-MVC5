@@ -1,0 +1,146 @@
+﻿@model MyBlog.UI.Models.DashbordVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SuperUserDashbord.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                <i class="fa fa-dashboard"></i> Dashboard <small>Statistics Overview</small>
+            </h1>
+       </div>
+    </div>
+    <!-- /.row -->
+   
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+           
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comment-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                  
+                                        @Model.NumberOfNewPost
+                               
+                                        </div>
+                                <div>Posts!</div>
+                            </div>
+                        </div>
+                    </div>
+           
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@Model.NumberOfNewComment</div>
+                            <div>New Comments!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="~/Comment/SuperUserCommentNeedAprove">
+                    <div class="panel-footer">
+                        <span class="pull-left">Need to Approve it</span>
+                        <span class="badge pull-right">@Model.NumberOfCommentNeedApprove</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-users fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@Model.NumberOfNewUser</div>
+                            <div>New Users!</div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-list fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@Model.NumberOfNewCategory</div>
+                            <div>Category!</div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-sort-numeric-asc fa-fw"></i> TOP ARTICLES</h3>
+                </div>
+                <div class="panel-body">
+                    @Html.Action("TopPost", "Post")
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-sort-numeric-asc fa-fw"></i> Empty</h3>
+                </div>
+                <div class="panel-body">
+                 
+                    <div class="text-right">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Empty</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        
+                    </div>
+                    <div class="text-right">
+                        <a href="#">View All  <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container-fluid -->
+

@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+
+{
+    using (Html.BeginForm())
+    {
+    @Html.AntiForgeryToken()
+
+        var identity = (HttpContext.Current.User as MyBlog.UI.Models.MyPrincipal).Identity as MyBlog.UI.Models.MyIdentity;
+     
+       
+        int _Id = Convert.ToInt32(identity.User.UserId);
+
+        @Html.Action("UserFormDetails", "User", new { Id = _Id })
+
+
+    }
+
+}
+else
+{
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="~/Account/Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="~/Account/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+
+
+            }

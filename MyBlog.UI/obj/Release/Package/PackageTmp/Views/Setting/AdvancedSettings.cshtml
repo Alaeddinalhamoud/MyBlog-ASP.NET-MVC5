@@ -1,0 +1,162 @@
+﻿@model MyBlog.UI.Models.AdvancedSettings
+@{
+    ViewBag.Title = "Advanced Settings";
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+}
+
+<div class="container-fluid">
+    @using (Html.BeginForm("AdvancedSettings", "Setting", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4> <i class="fa fa-fw fa fa-codepen fa-2x"></i>Advanced Settings</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+           <!--Start Show/Hide Widget-->
+
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-10">
+
+                    <div class="panel-green">
+                        <div class="panel-heading">
+                            <i class="fa fa-fw fa-window-restore"></i>
+                            Show/Hide Widgets
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <i class="fa fa-fw fa-list fa-2x"></i>
+                                    @Html.CheckBoxFor(model => model.DisplayLastCategory, new { htmlAttributes = new { @class = "form-control" } })
+                                    <span>Last Category</span>
+                                    @Html.ValidationMessageFor(model => model.DisplayLastCategory, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="col-md-3">
+                                    <i class="fa fa-fw fa-comment fa-2x"></i>
+                                    @Html.CheckBoxFor(model => model.DisplayLastPost, new { htmlAttributes = new { @class = "form-control" } })
+                                    <span>Last Post</span>
+                                    @Html.ValidationMessageFor(model => model.DisplayLastPost, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <i class="fa fa-fw fa-google-plus-official fa-2x"></i>
+                                    @Html.CheckBoxFor(model => model.DisplayGoogleWidget, new { htmlAttributes = new { @class = "form-control" } })
+                                    <span>Google Adv</span>
+                                    @Html.ValidationMessageFor(model => model.DisplayGoogleWidget, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3">
+                                    <i class="fa fa-fw fa-facebook-official fa-2x"></i>
+                                    @Html.CheckBoxFor(model => model.DisplayFbWidget, new { htmlAttributes = new { @class = "form-control" } })
+                                    <span>Facebook</span>
+                                    @Html.ValidationMessageFor(model => model.DisplayFbWidget, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    <i class="fa fa-fw fa-twitter-square fa-2x"></i>
+                                    @Html.CheckBoxFor(model => model.DisplayTwWidget, new { htmlAttributes = new { @class = "form-control" } })
+                                    <span>Twitter</span>
+                                    @Html.ValidationMessageFor(model => model.DisplayTwWidget, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+           
+
+            <!--End of Show/hide Widget-->
+
+            <!--FB Config Start-->
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-10">
+
+                    <div class="panel-primary">
+                        <div class="panel-heading">
+                            <i class="fa fa-fw fa-facebook-official"></i>
+                            Facebook Login App Configuration
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="form-group">
+
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.FBAppID, new { htmlAttributes = new { @class = "form-control", @placeholder = "FaceBook App ID" } })
+                                        @Html.ValidationMessageFor(model => model.FBAppID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.FBAppSecret, new { htmlAttributes = new { @class = "form-control", @placeholder = "FaceBook App Secret" } })
+                                        @Html.ValidationMessageFor(model => model.FBAppSecret, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FB Config End-->
+
+            <!--Google Config Start-->
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-10">
+
+                    <div class="panel-red">
+                        <div class="panel-heading">
+                            <i class="fa fa-fw fa-google-plus-square"></i>
+                            Google Captcha Configuration
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="form-group">
+
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.GoogleSitekey, new { htmlAttributes = new { @class = "form-control", @placeholder = "Google Site key" } })
+                                        @Html.ValidationMessageFor(model => model.GoogleSitekey, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.GoogleSecretkey, new { htmlAttributes = new { @class = "form-control", @placeholder = "Google Secret key" } })
+                                        @Html.ValidationMessageFor(model => model.GoogleSecretkey, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Google Config End-->
+               
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 input-group">
+                        <button type="submit" class="btn btn-primary" aria-label="Left Align">
+                            <span class="fa fa fa-pencil-square-o" aria-hidden="true"> </span> Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            }
+
+        </div>
+
+                 

@@ -1,0 +1,99 @@
+﻿@model MyBlog.UI.Models.PostViewModel
+
+@{
+    ViewBag.Title = "Index";
+
+    Layout = "~/Views/Shared/_SuperUserDashbord.cshtml";
+}
+
+
+
+
+   
+   
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                
+                <div><span class="fa fa-comments fa-1x" aria-hidden="true"></span> All Posts</div>
+            </div>
+            <div class="panel-body">
+                <table  class="table table-hover table-responsive" >
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th><i class="fa fa-comments-o fa-3x" aria-hidden="true"></i></th>
+                        <th>Creation Time</th>
+
+                        <th>Actions</th>
+                    </tr>
+
+                    @foreach (var item in Model.Posts)
+                       {
+                        <tr >
+                            <td class="col-md-3">
+                                <a class="truncateOpt" href="~/Post/Details/@item.PostId">
+                                    <div class="CutlongTitle">
+                                        @item.Title
+                                    </div>
+                                </a>
+
+                            </td>
+                            <td class="col-md-2">
+                                <a class="truncateOpt" href="~/User/Details/@item.UserId">
+                                    <div class="CutlongTitle">
+                                        @item.UserDetails.FName @item.UserDetails.LName
+                                    </div>
+                                </a>
+
+                            </td>
+                            <td class="col-md-1">
+                                <a class="truncateOpt" href="~/User/Details/@item.PostId">
+                                    <div class="CutlongTitle">
+                                        @item.CategoryDetail.CategoryName
+                                    </div>
+                                </a>
+
+                            </td>
+                            <td class="col-md-1">
+                                <a class="truncateOpt" href="~/Post/Details/@item.PostId">
+                                    <div class="badge">
+                                        @item.Frequence
+                                    </div>
+                                </a>
+
+                            </td>
+                            <td class="col-md-2">
+                                <a class="truncateOpt" href="~/Post/Details/@item.PostId">
+                                    <div class="CutlongTitle ">
+                                        @item.Create_time
+                                    </div>
+                                </a>
+
+                            </td>
+
+                            <td class="col-md-3">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.PostId }, new { @class = "btn btn-primary glyphicon glyphicon-edit" })
+                                @Html.ActionLink("Details", "Details", new { id = item.PostId }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
+
+                                                               
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+
+
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink(" New Post", "NewPost", null, new { @class = "btn btn-primary fa fa-pencil-square-o" })
+            </div>
+        </div>
+
+        <div class="pagination text-center">
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
+        </div>@*end of paging*@
+   
+
+ 

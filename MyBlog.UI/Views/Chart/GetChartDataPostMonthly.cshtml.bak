@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/scripts/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script>
+                var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+                google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+
+                $(document).ready(function () {
+
+                    $.ajax({
+                        url: "GetChartDataPostMonthly",
+                        data: "",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (data) {
+
+                            chartData = data;
+                        },
+                        error: function () {
+                            alert("Error loading data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawChart);
+                        drawChart();
+                    });
+                });
+
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable(chartData);
+
+                    var options = {
+                        title: "Number of Categories Monthly",
+                        pointSize: 5
+                    };
+
+                    var pieChart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                    pieChart.draw(data, options);
+
+                }
+
+</script>
+
+
+<div id="chart_div" >
+
+</div>
+

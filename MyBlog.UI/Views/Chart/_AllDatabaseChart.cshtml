@@ -1,0 +1,51 @@
+﻿<div id="Piechart_ALL_div" style="width:450px; height: 300px;"></div>
+
+
+
+<!--Start Category-->
+
+
+
+<script>
+   var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+  $(document).ready(function () {
+      $("#btnGo").on("click", function (e) {
+          e.preventDefault();
+      var year = $('#year').val();
+      var jsonData = JSON.stringify({ aYear: year });
+       $.ajax({
+
+                        url: "GetChartAllData",
+                        data: jsonData,
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (datapie) {
+
+                            chartDatapie = datapie;
+                        },
+                        error: function () {
+                            alert("Error loading data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawChartpie);
+                        drawChartpie();
+                    });
+      });
+  });
+             function drawChartpie() {
+                    var datapie = google.visualization.arrayToDataTable(chartDatapie);
+
+                    var options = {
+                        title: "Percentage of Database Content",
+                        pointSize: 5
+                    };
+                    var Chartpie = new google.visualization.PieChart(document.getElementById('Piechart_ALL_div'));
+                    Chartpie.draw(datapie, options);
+                }
+</script>

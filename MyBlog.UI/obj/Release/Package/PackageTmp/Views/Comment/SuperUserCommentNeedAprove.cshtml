@@ -1,0 +1,80 @@
+﻿@model MyBlog.UI.Models.PostViewModel
+@{
+    ViewBag.Title = "CommentNeedAprove";
+    Layout = "~/Views/Shared/_SuperUserDashbord.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div><span class="fa fa-check-square-o fa-2x" aria-hidden="true"></span> Comments</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-responsive">
+            <tr>
+                <th>Author</th>
+                <th>Comment</th>
+                <th>Publish</th>
+
+            </tr>
+
+            @foreach (var item in Model.Comments)
+            {
+                <tr>
+                    <td class="col-md-4">
+                        <div class="col-md-2">
+
+                           
+
+                        </div><!-- /col-sm-1 -->
+                        <div class="col-md-2">
+                            <div>
+                                <a class="truncateOpt" href="~/User/Details/@item.UserId">
+                                    @item.UserDetails.FName @item.UserDetails.LName
+                                </a>
+                            </div>
+
+                            <div>
+                                @item.UserDetails.Email
+                            </div>
+
+                        </div>
+
+                    </td>
+                    <td class="col-md-6">
+
+                        <div>
+                            <small>Submitted on </small>@item.Create_time
+                        </div>
+                        <a class="truncateOpt" href="~/Post/Details/@item.PostId">
+                            <div>
+                                @Html.Raw(item.Comment_Content)
+                            </div>
+                        </a>
+                        <div>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
+                        </div>
+
+
+                    </td>
+                    <td  class="col-md-2">
+                        @Html.ActionLink("Publish", "PublishComment", new { id = item.CommentId }, new { @class = "btn btn-primary fa fa-cloud-upload" })
+                        
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="panel-footer">
+        <div class="pagination text-center">
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("CommentNeedAprove", new { page = x }))
+        </div>@*end of paging*@
+
+    </div>
+
+    </div>
+    
+

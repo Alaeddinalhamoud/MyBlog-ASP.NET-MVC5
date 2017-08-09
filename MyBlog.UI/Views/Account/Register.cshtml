@@ -1,0 +1,130 @@
+﻿@model MyBlog.UI.Models.RegisterViewModel
+@using System.Configuration;
+@{  
+  
+    string _DisplayRegister = ConfigurationManager.AppSettings["DisplayRegister"];
+}
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container body-content-pages">
+    <h2>@ViewBag.Title.</h2>
+
+    @if (_DisplayRegister.Equals("block")) { 
+    <div class="col-md-8">
+        <section id="RegisterForm">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Create a new account.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                  
+                        <div class="col-md-10 input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                            @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control",placeholder="First Name" } })
+                           </div>
+                        <div>
+                             @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    
+                        <div class="col-md-10 input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                            @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control",placeholder = "Last Name" } })
+                         </div>
+                        <div>
+                               @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                  
+                        <div class="col-md-10 input-group">
+                            <span class="input-group-addon">
+                                <span class="fa fa-envelope"></span>
+                            </span>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "mailbox", placeholder = "Email" } })
+                          </div>
+                        <div>
+                              @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                   
+                        <div class="col-md-10 input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                           </div>
+                        <div>
+                             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                     
+                        <div class="col-md-10 input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Confirm Password" } })
+                            </div>
+                        <div>
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10 input-group">
+                            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                                <span class="fa fa-sign-in" aria-hidden="true"> </span> Create
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to Login", "Login")
+            </div>
+
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            <p>Speace For Social </p>
+          
+
+         
+                <a class="btn btn-primary" href="~/Account/Facebook">
+                    <span class="fa fa-facebook-official"></span>
+                    Login Facebook
+                   
+                </a>
+            
+                        @*
+         @Html.ActionLink("Login with facebook", "Facebook", "Account",new { @class = "btn btn-primary" })
+        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl }) *@
+        </section>
+    </div>
+
+    }else
+    {
+
+       <h1><p> Sorry Register Closed !</p></h1> 
+    }
+
+
+</div>

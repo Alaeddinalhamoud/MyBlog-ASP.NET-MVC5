@@ -1,0 +1,100 @@
+﻿@using Microsoft.AspNet.Identity
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashbord</title>
+    @Styles.Render("~/Content/BootStrap")
+    @Styles.Render("~/Content/font-awesome")
+    @Styles.Render("~/Content/Dashbord")
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+             <a class="navbar-brand" href="~/Home/index">My Blog</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="~/Home/index">Home</a></li>
+                    <li><a href="~/Post/index">Posts</a></li>
+                    <li><a href="~/User/index">Users</a></li>
+                    <li><a href="#">About</a></li>
+
+
+                </ul>
+                @Html.Partial("_LoginPartial");
+            </div>
+            </div>
+    </nav>
+      
+    <div id="main"  >
+        <aside class="col-md-2">
+
+           
+            <ul id="sidebarnav" class="list-group">
+              
+                <li><a class="selected" href="~/Account/Index"><span class="fa fa-home" aria-hidden="true"></span> Home</a></li>
+              
+               
+                <li data-toggle="collapse" data-target="#products" class="collapsed">
+                    <a href="#"><i class="fa fa-comments" aria-hidden="true"> Posts </i> <span style="float: right;" class="fa fa-arrow-down"></span></a> 
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li><a href="~/Post/Index"> - All Posts</a></li>
+                    <li><a href="~/Category/Index"> - Category</a></li>
+                 
+
+                </ul>
+                
+                
+                 <li><a href="~/User/Index"><span class="fa fa-users" aria-hidden="true"></span> Users</a></li>
+                <li><a href="~/Image/Index"><span class="fa fa-image" aria-hidden="true"></span> Gallery</a></li>
+                <li><a href="#"><span class="fa fa-pie-chart" aria-hidden="true"></span> Reports</a></li>
+                <li><a href="#"><span class="fa fa-cogs" aria-hidden="true"></span> Setting</a></li>
+           
+              
+               
+            
+             </ul>
+
+            
+        </aside> 
+        <content  class="col-md-10">
+
+            <div class="container-fluid">
+                 @if (TempData["message"] != null)
+            {
+                    <div class="alert alert-success">@TempData["message"]</div>
+                }
+            </div>
+            <div class="container-fluid">
+                @RenderBody()
+                </div>
+
+        </content>
+
+    </div>
+   
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/MyFile");
+  
+</body>
+</html>

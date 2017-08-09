@@ -1,0 +1,119 @@
+﻿@model MyBlog.UI.Models.PostViewModel
+@using System.Configuration;
+   
+@{ 
+    string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
+    string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
+    string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
+
+}
+
+
+<div  id="HomepageNavTextimg">
+    <div class="HomePage-text-box container-fluid">
+        <h1 id="HomePage-h-text-box-img">
+           @Model.HomeImageText
+        </h1>
+    </div>
+    <img id="HomePage-Image_text" src="@Model.HomeImage" class="img-responsive" />
+</div>
+
+
+    <div class="body-content">
+        <div class="col-md-2" style="padding:0 0 0 5px;">
+            <aside>
+                <div style="display:@_DisplayLastCategory;">
+                    @Html.Action("LastCategory", "Category")
+                </div>
+                <div style="display:@_DisplayLastPost;">
+                    @Html.Action("LastPost", "Post")
+                </div>
+
+               
+            </aside>
+        </div>@*End of aside row 2 Lift*@
+        <div class="col-md-8" style="padding:0 5px 0 5px;">
+            <section>
+                @foreach (var p in Model.Posts)
+
+            {
+                    <div class="row MainPost">
+
+                        <div class="col-md-12">
+                            <article>
+                                <header>
+                                    <h3>
+                                        <a class="PostTitle truncateOpt" href="~/Post/Details/@p.PostId">
+                                            @p.Title
+                                        </a>
+                                    </h3>
+                                    <h6 style="font-style:italic;">
+                                        by <a href="~/User/Details/@p.UserId">
+                                            @Html.Label(p.UserDetails.FName + " " + p.UserDetails.LName)
+                                        </a>
+                                    </h6>
+                                </header>
+
+                                <p>
+                                    @Html.Raw(p.Post_Content)
+                                </p>
+
+
+                                <footer>
+                                  
+                                    <i class="fa fa-calendar" aria-hidden="true"></i> On
+                                     <time><small>  @p.Create_time.ToShortDateString() </small></time>
+                                </footer>
+                            </article>
+
+                        </div>@* End of Post row *@
+                    </div>@*End of Image and Post Row*@
+                    @*
+                        <article class="row col-md-12">
+                                <div class="panel panel-default">
+                                    <header class="panel-heading">
+                                         @p.Title
+                                    </header>
+
+                                    <div class="panel-body">
+                                        <p>@Html.Raw(p.Post_Content)</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Posted @p.Create_time.ToShortDateString()
+                                    </div>
+                                </div>
+
+                             </article>
+                    *@
+
+                }
+
+            </section>
+            <div class="pagination text-center">
+                @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
+            </div>@*End of paging*@
+        </div>@*End of section row 1 Main (Posts)*@
+        <div class="col-md-2" style="padding:0 5px 0 0;">
+            <aside>
+                
+
+
+                <div style="display:@_DisplayGoogleAdv;">
+
+                  
+                         @Html.Action("GetWidget", "Widget", new { Id = 3 })
+          
+                
+
+                
+
+                 </div>
+
+            </aside>
+        </div>@*End of aside row 3 Right Aside*@
+       
+
+    </div>@*End of Containt raw*@
+
+
+

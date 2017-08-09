@@ -1,0 +1,53 @@
+﻿@using System.Configuration;
+@{ string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];} 
+@model  IEnumerable<MyBlog.Data.Post>
+@foreach (var p in Model)
+
+            {
+    <div class="row MainPost">
+
+        <div class="col-md-12">
+            <article>
+                <header>
+                    <h3>
+                        @*
+                            <a class="PostTitle truncateOpt" href="~/Post/Details/@p.PostId">
+                                @p.Title
+                            </a>
+                        *@
+                        <a class="PostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = p.GenerateSlug() })">@p.Title</a>
+                    </h3>
+                    <h6 style="font-style:italic;">
+                        by <a href="~/User/Details/@p.UserId">
+                            @Html.Label(p.UserDetails.FName + " " + p.UserDetails.LName)
+                        </a>
+                    </h6>
+                </header>
+
+                <p>
+                    @Html.Raw(p.Post_Content)
+                </p>
+
+
+                <footer>
+                    <time>  @p.Create_time </time>
+                </footer>
+            </article>
+
+        </div>@* End of Post row *@
+    </div>@*End of Image and Post Row*@
+
+
+    @*Start - Google Ads *@
+
+    <div style="display:@_DisplayGoogleAdv;">
+
+        @Html.Action("GetWidget", "Widget", new { Id = 3 })
+
+
+    </div>
+                @*End - Google Ads *@
+
+}
+
+

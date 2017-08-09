@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MyBlog.Data.Widget>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div><span class="fa fa-window-restore fa-2x" aria-hidden="true"></span> Widgets</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-responsive">
+            <tr>
+                <th>
+                    Name
+                </th>
+                
+                <th>
+                    Last Update
+                </th>
+                <th>
+                    Updated By
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-md-4">
+                        @item.WidgetName
+                    </td>
+                    
+                    <td class="col-md-4">
+                        @item.Update_Time
+                    </td>
+                    <td class="col-md-2">
+
+                        @item.UserDetails.FName @item.UserDetails.LName
+                        
+                    </td>
+                    <td class="col-md-2">
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.WidgetId } ,new {@class= "btn btn-primary glyphicon glyphicon glyphicon-edit" })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+    </div>
+   
+</div>

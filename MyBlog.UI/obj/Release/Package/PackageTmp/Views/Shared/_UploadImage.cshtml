@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "_UploadImage";
+
+}
+
+
+
+ 
+
+
+
+        <input type="file" id="UploadImg" />
+        <br />
+        <img id="imgPreview" height="200" width="200" class="thumbnail" />
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn" type="button" data-clipboard-target="#txtImg">
+                    <i class="glyphicon glyphicon-copy" aria-hidden="true"></i>
+                </button>
+            </span>
+            <input type="text" placeholder="Copy Image link" id="txtImg" class="form-control" aria-label="..." onchange="copytxt();" />
+           
+        </div>
+   
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/clipboard.min.js"></script>
+    <script src="~/Scripts/imagehideblock.js"></script>
+    
+ 
+ 
+    <script>
+        $("#UploadImg").change(function () {
+                    var data = new FormData();
+                    var files = $("#UploadImg").get(0).files;
+                    if (files.length > 0) {
+                        data.append("MyImages", files[0]);
+                    }
+
+                    $.ajax({
+                        url: "/Image/UploadFile",
+                        type: "POST",
+                        processData: false,
+                        contentType: false,
+                        data: data,
+                        success: function (response) {
+                            //code after success
+                            $("#txtImg").val('/Upload/' + response);
+                            $("#imgPreview").attr('src', '/Upload/' + response);
+                        },
+                        error: function (er) {
+                            alert(er);
+                        }
+
+                    });
+        
+        });
+          
+    </script>
+}

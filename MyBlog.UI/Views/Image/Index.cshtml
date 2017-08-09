@@ -1,0 +1,85 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+
+@model IPagedList <MyBlog.Data.Image>
+
+@{
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div><span class="fa fa-image fa-2x" aria-hidden="true"></span> All Images</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-condensed">
+            <tr>
+                <th>Image</th>
+                <th>User</th>
+                <th>Size</th>
+                <th>Upload date</th>
+                <th>Actions</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-md-3">
+                        <a class="truncateOpt" href="/Upload/@item.Imagepath">
+                            <div class="CutlongTitle">
+                                <img src="/Upload/@item.Imagepath" alt="Image" width="150" height="150"/>
+                              
+                            </div>
+                        </a>
+
+                    </td>
+                    <td class="col-md-2">
+                        <a class="truncateOpt" href="~/User/Details/@item.UserId">
+                            <div class="CutlongTitle">
+                               @item.UserDetails.FName @item.UserDetails.LName
+
+                            </div>
+                        </a>
+
+                    </td>
+                    <td class="col-md-2">
+                        <a href="/Upload/@item.Imagepath">
+                            <div>
+                                @{ 
+                                    var Mega = item.Size / 1024;
+                                }
+                                @Mega.ToString("N") MB
+                            </div>
+                        </a>
+                    </td>
+                    <td class="col-md-2">
+                       
+                            <div>
+                              @item.Create_time
+                            </div>
+                        
+                    </td>
+                    <td class="col-md-2">
+                      
+                       @Html.ActionLink(" ", "Delete", new { id = item.Id },new { @class= "btn btn-danger glyphicon glyphicon glyphicon-trash" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a New Image", "NewPost", null, new { @class = "btn btn-default" })
+
+
+    </div>@*End of Panel Footer*@
+</div>
+<div>
+ @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>@*end of paging*@
+
+

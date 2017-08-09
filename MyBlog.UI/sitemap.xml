@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://a-hamoud.com/</loc>
+  <changefreq>always</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Home/index</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Page/Details/2</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Page/Details/1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Account/Register</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Account/Login</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=17&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=18&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=19&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=20&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=21&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=22&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=23&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=24&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1112</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1111</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1110</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1109</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1108</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1107</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1106</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1105</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1104</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1103</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Account/Login?ReturnUrl=%2fUser%2fDetails%2f44</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/?page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/?page=2</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/?page=3</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/?page=4</loc>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Account/ForgotPassword</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1094</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1093</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1097</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1092</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1096</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByCategory?category=22&amp;page=2</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1102</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Android&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=JAVA&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Youtube&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Google&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=API&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Java&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=ASP.NET&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=WebService&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=C%23&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=CKEditor&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=SQL&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=MVC&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=HTML&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=SQLServer&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=CSS&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=AJAX&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Tuples%20&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=C%237&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=ASP.net%20MVC&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Onion%20Architecture&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1101</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1100</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1099</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/Details/1098</loc>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=C%23.NET&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=.NET&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=TrimEnd&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=TrimStart&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Trim&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=String&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Ajax&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=ViewBag&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=MVC5&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=WebConfig&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Image&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=Text&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=AngularJS&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=C%23&amp;page=2</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=ASP.NET%20MVC&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://a-hamoud.com/Post/PostByTag?tag=JSON&amp;page=1</loc>
+  <changefreq>always</changefreq>
+  <priority>0.51</priority>
+</url>
+</urlset>

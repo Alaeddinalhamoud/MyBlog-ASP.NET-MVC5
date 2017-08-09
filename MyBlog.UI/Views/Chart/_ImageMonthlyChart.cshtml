@@ -1,0 +1,54 @@
+﻿
+
+<div id="chart_Images_div" style="width:450px; height: 300px;"></div>
+
+
+
+<script>
+   var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+  $(document).ready(function () {
+      $("#btnGo").on("click", function (e) {
+          e.preventDefault();
+      var year = $('#year').val();
+      var jsonData = JSON.stringify({ aYear: year });
+       $.ajax({
+
+                          url: "GetChartImageMonthly",
+                         data: jsonData,
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (datai) {
+
+                            chartDatai = datai;
+                        },
+                        error: function () {
+                            alert("Error loading Images data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawCharti);
+                        drawCharti();
+                    });
+      });
+  });
+             function drawCharti() {
+                    var datai = google.visualization.arrayToDataTable(chartDatai);
+
+                    var options = {
+                        title: "Number of Images Monthly",
+                        pointSize: 5
+                    };
+                    var Charti = new google.visualization.AreaChart(document.getElementById('chart_Images_div'));
+                    Charti.draw(datai, options);
+                }
+</script>
+
+
+
+
+

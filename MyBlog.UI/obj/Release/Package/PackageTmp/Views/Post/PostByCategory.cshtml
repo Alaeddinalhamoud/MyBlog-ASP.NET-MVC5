@@ -1,0 +1,60 @@
+﻿@model MyBlog.UI.Models.PostViewModel
+@{
+    ViewBag.Title = "PostByCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid body-content-pages">
+
+    <div class="col-md-3">
+        <aside>
+            @Html.Action("LastCategory", "Category")
+            @Html.Action("LastPost", "Post")
+
+        </aside>
+    </div>
+    <div class="col-md-9">
+        <section>
+            @foreach (var p in Model.Posts)
+
+            {
+                <div class="row MainPost">
+
+                    <div class="col-md-12">
+                        <article>
+                            <header>
+                                <h3>
+                                    <a class="PostTitle truncateOpt" href="~/Post/Details/@p.PostId">
+                                        @p.Title
+                                    </a>
+                                </h3>
+                                <h6 style="font-style:italic;">
+                                    by <a href="~/User/Details/@p.UserId">
+                                        @Html.Label(p.UserDetails.FName + " " + p.UserDetails.LName)
+                                    </a>
+                                </h6>
+                            </header>
+
+                            <p>
+                                @Html.Raw(p.Post_Content)
+                            </p>
+
+
+                            <footer>
+                                <time>  @p.Create_time </time>
+                            </footer>
+                        </article>
+
+                    </div>@* End of Post row *@
+                </div>@*End of Image and Post Row*@
+
+
+            }
+
+        </section>
+        <div class="pagination text-center">
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("PostByCategory", "Post", new { category = Model.CurrentCategory, page = x }))
+        </div>@*End of paging*@
+    </div>@*End of section row 1*@
+
+</div>

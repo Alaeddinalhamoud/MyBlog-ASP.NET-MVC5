@@ -1,0 +1,240 @@
+﻿@model MyBlog.Domain.Model.User
+ @{ViewBag.Title = "Details"; }
+
+<div class="container body-content-pages">
+
+    @{
+        var identity = (HttpContext.Current.User as MyBlog.UI.Models.MyPrincipal).Identity as MyBlog.UI.Models.MyIdentity;
+        int _Id = Convert.ToInt32(identity.User.UserId);
+        int _RoleId = Convert.ToInt32(identity.User.RoleId);
+
+        if (Model.UserId == _Id)
+        {
+
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            
+                <h2>Profile</h2>
+
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Create_time)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Create_time)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Update_Time)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Update_Time)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RoleId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RoleDetails.RoleName)
+                    </dd>
+
+                </dl>
+                <a href="~/Account/ResetPassword/@_Id">Change Your Password</a>
+
+
+            
+
+
+
+        }
+        else if (_RoleId == 3)//SuperUser roleid=3
+        {
+            Layout = "~/Views/Shared/_SuperUserDashbord.cshtml";
+
+            <h2>Details</h2>
+
+            <div>
+
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Create_time)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Create_time)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Last_Login)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Last_Login)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Update_Time)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Update_Time)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RoleId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RoleDetails.RoleName)
+                    </dd>
+
+                </dl>
+            </div>
+
+
+        }
+        else if (_RoleId == 1)//Admin roleid=1
+        {
+            Layout = "~/Views/Shared/_Dashbord.cshtml";
+
+            <h2>Details</h2>
+
+            <div>
+
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Create_time)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Create_time)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Update_Time)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Update_Time)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Last_Login)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Last_Login)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RoleId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RoleDetails.RoleName)
+                    </dd>
+
+                </dl>
+            </div>
+
+
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            <div class="container body-content-pages center-block">
+                <h4>Error</h4>
+                <hr />
+                <br />
+
+                <h1>Access Denied</h1>
+                <br />
+                <br />
+            </div>
+        }
+
+
+
+
+    }
+
+    </div>

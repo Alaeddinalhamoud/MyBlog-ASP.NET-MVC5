@@ -1,0 +1,58 @@
+﻿@model MyBlog.Domain.Model.Post
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+
+}
+
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.Title)
+        </dt>
+
+        <dd>
+          <h3>@Html.DisplayFor(model => model.Title)</h3>  
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.Post_Content)
+        </dt>
+
+        <dd>
+            @Html.Raw( Model.Post_Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_time)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index","Home")
+        </div>
+    }
+</div>

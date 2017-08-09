@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<MyBlog.Domain.Model.Comment>
+
+@{
+    ViewBag.Title = "CommnetByPost";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
+   
+}
+
+<h3>Comments</h3>
+<hr/>
+
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-sm-1">
+        <div class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
+    <div class="col-sm-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>@item.UserDetails.FName  @item.UserDetails.LName</strong> <span class="text-muted">@item.Create_time</span>
+            </div>
+            <div class="panel-body">
+               @Html.Raw(item.Comment_Content)
+            </div><!-- /panel-body -->
+
+
+   
+    @if (Request.IsAuthenticated)
+
+    {
+
+        var identity = (HttpContext.Current.User as MyBlog.UI.Models.MyPrincipal).Identity as MyBlog.UI.Models.MyIdentity;
+        int _Id = Convert.ToInt32(identity.User.UserId);
+        int _RoleId = Convert.ToInt32(identity.User.RoleId);
+
+        if (_RoleId == 1 || _RoleId==3)
+        {
+
+
+            <div class="panel-footer">
+               
+                    @Html.ActionLink(" ", "Edit", new { id = item.CommentId }, new { @class = "glyphicon glyphicon-edit" }) |
+
+                    @Html.ActionLink(" ", "Delete", new { id = item.CommentId }, new { @class = "glyphicon glyphicon glyphicon-trash" })
+                
+            </div>
+        }
+    }
+
+        </div><!-- /panel panel-default -->
+    </div><!-- /col-sm-5 -->
+</div>
+}

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="alaeddin-001-site1.gtempurl.com/myblog" />
+  <setParameter name="EFDbContext-Web.config Connection String" value="&quot;Data Source=SQL5025.SmarterASP.NET;Initial Catalog=DB_A15288_ala;User Id=DB_A15288_ala_admin;Password=fox698404;&quot;" />
+</parameters>

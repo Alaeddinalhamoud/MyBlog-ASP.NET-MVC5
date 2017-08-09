@@ -1,0 +1,82 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+@using System.Configuration;
+@{ string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];}
+@model IPagedList<MyBlog.Data.Post>
+
+<style type="text/css" media="all">
+    div.box {
+      
+        height: 50px;
+      
+        /* 				overflow: hidden; */
+    }
+</style>
+ 
+@foreach (var item in Model)
+{
+<div class="row MainPost">
+                    <div class="ImagePostTitle">
+                    <img src="@item.FeaturedImage" class="img-responsive" />
+
+                    @* <div class="Bannertext">@Model.Title</div>*@
+                    <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">@item.Title</a>
+
+                </div>
+                    @*
+                    <h3> old befor change link seo
+        <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
+            @Model.Title
+        </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
+                   </h3>*@
+    <article style="padding:5px 5px 5px 5px">
+        <header>
+            <h6 style="font-style:italic;">
+                by <a href="~/User/Details/@item.UserId">
+                    @Html.Label(item.UserDetails.FName) @Html.Label(item.UserDetails.LName)
+                </a>
+            </h6>
+        </header>
+        @*For Cutting long Post Countent*@
+        <div class="box dot3">
+            @Html.Raw(item.Post_Content)
+        </div>
+
+        <a class="btn btn-default navbar-btn" href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">Read more..</a>
+        <footer>
+            <i class="fa fa-calendar" aria-hidden="true"></i> On
+            <time><small>  @item.Create_time.ToShortDateString() </small></time>
+        </footer>
+    </article>
+
+   @* End of Post row *@
+</div>@*End of Image and Post Row*@
+@*
+    <article class="row col-md-12">
+            <div class="panel panel-default">
+                <header class="panel-heading">
+                     @p.Title
+                </header>
+
+                <div class="panel-body">
+                    <p>@Html.Raw(p.Post_Content)</p>
+                </div>
+                <div class="panel-footer">
+                    Posted @p.Create_time.ToShortDateString()
+                </div>
+            </div>
+
+         </article>
+
+
+     @*Start - Google Ads *@
+    <div style="display:@_DisplayGoogleAdv;margin-bottom:10px;">
+        @Html.Action("GetWidget", "Widget", new { Id = 3 })
+    </div>
+    @*End - Google Ads *@
+
+}
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+

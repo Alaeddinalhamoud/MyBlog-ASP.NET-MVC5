@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<MyBlog.Domain.Model.Post>
+
+
+        
+
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr class="navbar-default">
+                <th>RECENT ARTICLES</th>
+                
+            </tr>
+        </thead>
+        <tbody style="background-color:rgba(255,255,255,0.885);">
+            @foreach (var item in Model)
+            {
+                <tr >
+
+                    <td>
+                         
+                        @Html.ActionLink(item.Title, "Details", "Post",
+                   new
+                   {
+                       Id = @item.PostId,
+
+                   }, 
+                   new { @class= "truncateOpt" })
+                        <span class="badge" style="float:right;">@item.Frequence</span>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+  

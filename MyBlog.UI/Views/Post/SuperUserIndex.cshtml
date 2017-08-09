@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MyBlog.Data.Post>
+@using GridMvc.Html
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SuperUserDashbord.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div><span class="fa fa-comments fa-1x" aria-hidden="true"></span> All Posts</div>
+    </div>
+    <div class="panel-body">
+        <div class="code-cut table table-responsive">
+            @Html.Grid(Model).Columns(columns =>
+       {
+           columns.Add(c => c.Title).Titled("Title").Filterable(true);
+           columns.Add(c => c.UserId).Titled("Author").RenderValueAs(c => c.UserDetails.FName + " " + c.UserDetails.LName).Filterable(true);
+           columns.Add(c => c.CategoryDetail.CategoryName).Titled("Category").Filterable(true);
+           columns.Add(c => c.Frequence).Titled("Comments").Filterable(true);
+
+           columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.PostId }));
+           columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Details", "Details", new { id = o.PostId }));
+         
+
+       }).WithPaging(10).Sortable(true)
+        </div>
+
+
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink(" New Post", "NewPost", null, new { @class = "btn btn-primary fa fa-pencil-square-o" })
+    </div>
+</div>

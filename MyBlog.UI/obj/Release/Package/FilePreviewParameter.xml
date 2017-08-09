@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="alaeddin-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Alaeddin\\documents\\visual\ studio\ 2015\\Projects\\MyBlog-website\\MyBlog\.UI\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Alaeddin\\documents\\visual\ studio\ 2015\\Projects\\MyBlog-website\\MyBlog\.UI\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="EFDbContext-Web.config Connection String" description="" value="Data Source=SQL5025.SmarterASP.NET;Initial Catalog=DB_A15288_ala;User Id=DB_A15288_ala_admin;Password=fox698404;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alaeddin\\documents\\visual\ studio\ 2015\\Projects\\MyBlog-website\\MyBlog\.UI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EFDbContext']/@connectionString" />
+  </parameter>
+</parameters>

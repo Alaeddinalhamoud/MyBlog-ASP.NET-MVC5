@@ -1,0 +1,112 @@
+﻿@model MyBlog.Domain.Model.Post
+
+@{
+    ViewBag.Title = "New Post";
+
+}
+<link href="~/Content/bootstrap-tagsinput-typeahead.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet" />
+
+<div class="container body-content-pages">
+    <h2> New Post</h2>
+    @using (Html.BeginForm("NewPost", "Post", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+
+         
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <button type="button" id="btnimage" onclick="showhideimage();" class="btn btn-default">
+                        <span class="fa fa-image" aria-hidden="true"></span> Uplaod Image
+                    </button>
+                </div>
+                <div class="panel-body" hidden id="imageblock">
+                    @Html.Action("UploadImage", "Image") 
+                   
+                </div>
+
+            </div>@*End od image upload block*@
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.HiddenFor(model => model.PostId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.PostId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PostId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </span>
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
+                   </div>
+                <div>
+                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-12">
+                    @Html.TextAreaFor(model => model.Post_Content, new { @class = "ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Post_Content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.LabelFor(model => model.Tages, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Tages, new { htmlAttributes = new { @class = "form-control", data_role = "tagsinput", placeholder = "Add tags" } })
+                    @Html.ValidationMessageFor(model => model.Tages, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+             
+                <div class="col-md-12">
+                    @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.CategoryDetails, "CategoryId", "CategoryName"))
+                    @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                  
+                    @Html.HiddenFor(model => model.Create_time, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly"} })
+                  
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 input-group">
+                    <button type="submit" class="btn btn-primary" aria-label="Left Align">
+                        <span class="fa fa fa-pencil-square-o" aria-hidden="true"> </span> Publish
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+           
+            <script src="~/Scripts/clipboard.min.js"></script>
+            <script src="~/Scripts/imagehideblock.js"></script>
+            <script src="~/Scripts/clipborad.js"></script>
+           
+            <script src="~/scripts/bootstrap-tagsinput.js"></script>
+
+<script type="text/javascript">
+
+
+ CKEDITOR.env.isCompatible = true;
+
+ 
+</script>
+           
+        }

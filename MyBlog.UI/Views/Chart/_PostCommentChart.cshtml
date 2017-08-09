@@ -1,0 +1,52 @@
+﻿<div id="chart_PostComment_div" style="width:450px; height: 300px;"></div>
+
+
+
+<script>
+   var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+  $(document).ready(function () {
+      $("#btnGo").on("click", function (e) {
+          e.preventDefault();
+      var year = $('#year').val();
+      var jsonData = JSON.stringify({ aYear: year });
+       $.ajax({
+
+                        url: "GetChartDataPostComments",
+                        data: jsonData,
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (data) {
+
+                            chartData = data;
+                        },
+                        error: function () {
+                            alert("Error loading Post and Comment data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawChart);
+                        drawChart();
+                    });
+      });
+  });
+             function drawChart() {
+                    var data = google.visualization.arrayToDataTable(chartData);
+
+                    var options = {
+                        title: "Number of Post and Comment Monthly",
+                        pointSize: 5
+                    };
+                    var Chart = new google.visualization.ColumnChart(document.getElementById('chart_PostComment_div'));
+                    Chart.draw(data, options);
+                }
+</script>
+
+
+
+
+

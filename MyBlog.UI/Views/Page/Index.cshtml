@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MyBlog.Data.Page>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div><span class="fa fa-file-text-o fa-2x" aria-hidden="true"></span> Pages</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-responsive">
+            <tr>
+                <th>
+                    Title
+                </th>
+                
+                <th>
+                    Last Update
+                </th>
+                <th>
+                    Updated By
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model){
+                <tr>
+                    <td>
+                        @item.Title
+                    </td>
+                    
+                    <td>
+                        @item.Update_Time
+                    </td>
+                    <td>
+
+                      @item.UserDetail.FName   @item.UserDetail.LName             </td>
+                    <td>
+
+                        @Html.ActionLink("Details", "Details", new { id = item.PageId } ,new {@class= "btn btn-primary glyphicon glyphicon-modal-window" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+    </div>
+
+</div>

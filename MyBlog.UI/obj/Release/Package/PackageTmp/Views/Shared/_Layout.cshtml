@@ -1,0 +1,136 @@
+﻿@using System.Configuration;
+@{ 
+    string _DisplayFbWidget = ConfigurationManager.AppSettings["DisplayFbWidget"];
+    string _DisplayTwWidget = ConfigurationManager.AppSettings["DisplayTwWidget"];
+    string _WebsiteRoot=  HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Alaeddin Alhamoud</title>
+    
+    @Styles.Render("~/Content/BootStrap")
+    @Styles.Render("~/Content/Site")
+    @Styles.Render("~/Content/font-awesome")
+    @Styles.Render("~/Content/CSS-Footer")
+
+   
+    
+</head>
+<body >
+
+    <div id="bbbody">
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="~/Home/index">
+                        <i class="fa fa-medium fa-1x" aria-hidden="true"></i>y Blog
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="~/Home/index">Home</a></li>
+                        <li><a href="~/Page/Details/1">About</a></li>
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="row">
+            @RenderBody()
+        </div>
+
+        <!-- My footer class -->
+        <div class="myf">
+            <!-- FOOTER -->
+            <div class="bg-texture">
+                <footer>
+                    <div class="container animatedParent">
+                        <div class="row animated fadeInDownShort go">
+                            <div class="col-md-4">
+                                <!-- COLUMN  -->
+
+                                <div class="row margin-bottom-30px" style="display:@_DisplayTwWidget;">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled footer-nav">
+                                            @Html.Action("GetWidget", "Widget", new { Id = 2 })
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- END COLUMN 1 -->
+                            </div>
+                            <div class="col-md-4">
+                                <!-- COLUMN 2 -->
+
+                                <div class="row margin-bottom-30px">
+                                    <div class="col-xs-6" style="display:@_DisplayFbWidget;">
+                                        <ul class="list-unstyled footer-nav">
+                                            @Html.Action("GetWidget", "Widget", new { Id = 1 })
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- END COLUMN 2 -->
+                            </div>
+                            <div class="col-md-4">
+                                <!-- COLUMN 3 -->
+
+                                <div class="social-connect">
+                                    <h3 class="footer-heading">GET CONNECTED</h3>
+                                    <ul class="list-inline social-icons">
+                                        <li><a href="https://www.facebook.com/alaeddinalhamoud" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/aladinhamod" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://plus.google.com/+AlaeddinAlhamoud" class="googleplus-bg"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCKjc_Y27mfa253dBfbBlhYA" class="youtube-bg"><i class="fa fa-youtube"></i></a></li>
+                                        <li><a href="https://uk.linkedin.com/in/alaeddin-alhamoud-8ab73333" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="@_WebsiteRoot/Home/Feed" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- END COLUMN 3 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COPYRIGHT -->
+                    <div class="text-center copyright"> ©2016 Alaeddin Alhamoud. All Rights Reserved. </div>
+                    <!-- END COPYRIGHT -->
+                </footer>
+            </div>
+        </div><!-- END FOOTER -->
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/ckeditor")
+        @Scripts.Render("~/bundles/modernizr")
+
+        @Scripts.Render("~/bundles/FooterJs")
+        @Scripts.Render("~/bundles/MyFile")
+        @Scripts.Render("~/bundles/ImgUploder")
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

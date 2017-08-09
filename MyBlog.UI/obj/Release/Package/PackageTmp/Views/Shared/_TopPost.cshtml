@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MyBlog.Domain.Model.Post>
+
+
+
+
+
+    <div class="list-group">
+
+    @foreach (var item in Model)
+    {
+
+        <div class="list-group-item">
+            @Html.ActionLink(item.Title, "Details", "Post",
+                new
+                {
+                    Id = @item.PostId,
+
+                },
+                new { @class = "truncateOpt" })
+            <span class="badge" style="float:right;">@item.Frequence</span>
+        </div>
+
+
+    }
+
+</div>

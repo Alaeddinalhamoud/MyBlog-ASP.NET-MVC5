@@ -1,0 +1,51 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+
+@model MyBlog.UI.Models.PostViewModel
+@{
+    ViewBag.Title = "Tags";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Configuration;
+
+@{
+
+    string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
+
+}
+
+<div class="container-fluid body-content-pages">
+
+    <div class="col-md-3">
+        <aside>
+            @Html.Action("LastCategory", "Category")
+            @Html.Action("LastPost", "Post")
+
+        </aside>
+    </div>
+    <div class="col-md-9">
+        <section>
+            @Html.Partial("_PostByTag", Model.Posts)
+        </section>
+        <div class="pagination text-center">
+            @Html.PagedListPager((IPagedList)Model.Posts, page => Url.Action("PostByTag", new { tag = Model.CurrentTag, page }))
+        </div>@*End of paging*@
+    </div>@*End of section row 1*@
+
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+     //to resize Images as img-reposive after erase inline css add new
+  $(document).ready(function() {
+      $('img').attr('style', 'max-width: 100%; height:auto;');
+
+  });
+    </script>
+
+
+}
+

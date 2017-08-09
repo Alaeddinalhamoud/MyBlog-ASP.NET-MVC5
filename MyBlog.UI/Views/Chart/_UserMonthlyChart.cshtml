@@ -1,0 +1,53 @@
+﻿
+<div id="chart_Users_div" style="width:450px; height: 300px;"></div>
+
+
+
+<script>
+   var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+  $(document).ready(function () {
+      $("#btnGo").on("click", function (e) {
+          e.preventDefault();
+      var year = $('#year').val();
+      var jsonData = JSON.stringify({ aYear: year });
+       $.ajax({
+
+                        url: "GetChartUserMonthly",
+                        data: jsonData,
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (datau) {
+
+                            chartDatau = datau;
+                        },
+                        error: function () {
+                            alert("Error loading User data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawChartu);
+                        drawChartu();
+                    });
+      });
+  });
+             function drawChartu() {
+                    var datau = google.visualization.arrayToDataTable(chartDatau);
+
+                    var options = {
+                        title: "Number of Users Monthly",
+                        pointSize: 5
+                    };
+                    var Chartu = new google.visualization.LineChart(document.getElementById('chart_Users_div'));
+                    Chartu.draw(datau, options);
+                }
+</script>
+
+
+
+
+

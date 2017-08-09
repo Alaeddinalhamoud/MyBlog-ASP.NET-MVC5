@@ -1,0 +1,171 @@
+﻿@using Microsoft.AspNet.Identity
+@model MyBlog.UI.Models.PostViewModel
+@using System.Configuration;
+
+@{
+    ViewBag.Title = Model.Post.Title;
+    string _DisplayFBLogin = ConfigurationManager.AppSettings["DisplayFBLogin"];
+    string _DisplaydisqusWidget = ConfigurationManager.AppSettings["DisplaydisqusWidget"];
+    string _DisplayLocalCommentWidget = ConfigurationManager.AppSettings["DisplayLocalCommentWidget"];
+    string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
+
+}
+
+
+
+
+<div class="container-fluid body-content-pages" >
+    <div class="container">
+        @if (TempData["message"] != null)
+            {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Info!</strong> @TempData["message"]
+            </div>
+
+        }
+    </div>
+    <section class="container">
+        <div class="col-md-12">
+            <article class="post-preview" >
+                
+                    <header class="modal-title">
+                      <h1>  @Model.Post.Title </h1>
+                    </header>
+                <hr />
+                <p class="post-subtitle">
+                    @Html.Raw(Model.Post.Post_Content)
+                </p>
+                <hr/>
+                <footer class="post-meta">
+                <span class="fa fa-user" aria-hidden="true"> Posted by</span> 
+                <a href="~/User/Details/@Model.Post.UserId">
+                @Html.LabelFor(model => model.Post.UserId, Model.Post.UserDetails.FName + " " + Model.Post.UserDetails.LName)
+                   
+                
+                </a>
+                <span class="fa fa-calendar" aria-hidden="true"> on</span>                 
+                        @Model.Post.Create_time.ToShortDateString()
+                    <div>
+                        @{
+
+
+                            if (Request.IsAuthenticated)
+                            {
+                                var identity = (HttpContext.Current.User as MyBlog.UI.Models.MyPrincipal).Identity as MyBlog.UI.Models.MyIdentity;
+                                int _RoleId = Convert.ToInt32(identity.User.RoleId);
+                                if (_RoleId == 1 || _RoleId == 3)
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = Model.Post.PostId }, new { @class = "btn btn-primary glyphicon glyphicon-edit" })
+                                    
+                                }
+                            }
+                        }
+                    </div>
+                    
+                    <br/>
+                    <div >
+                      
+                                               @{
+
+                                                   string[] tages = Model.Post.Tages.Split(',');
+                                                   if(tages != null) { 
+                                                   foreach (var tag in tages)
+                                                   {
+
+                                                    <span class="tag tag-pill tag-primary">
+                                                        <i class="glyphicon glyphicon-tag"></i>
+
+       @Html.ActionLink(tag, "PostByTag", "Post",new {tag = tag, page = 1}, null)
+
+                                                       
+                                                    </span>
+
+
+
+                                                       }
+                                                   }
+                                            }
+                        
+</div>
+
+                </footer>
+            </article>
+            
+            <hr>
+        </div>
+        <p>Share</p>
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_google_plus"></a>
+            <a class="a2a_button_reddit"></a>
+            <a class="a2a_button_google_gmail"></a>
+            <a class="a2a_button_linkedin"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_whatsapp"></a>
+            <a class="a2a_button_draugiem"></a>
+            <a class="a2a_button_facebook_messenger"></a>
+            <a class="a2a_button_copy_link"></a>
+            <a class="a2a_button_skype"></a>
+            <a class="a2a_button_sms"></a>
+            <a class="a2a_button_viber"></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
+    </section>
+    @*Start - Google Ads *@
+
+    <div style="display:@_DisplayGoogleAdv;">
+
+        @Html.Action("GetWidget", "Widget", new { Id = 3 })
+
+
+    </div>
+    @*End - Google Ads *@
+    <section class="container">
+        @Html.Partial("_CommnetByPost", Model.Comments)
+    </section>
+    <section class="container">
+        <div class="col-md-12">
+
+
+            @*Start disqus.com Commnet*@
+            <div style="display:@_DisplaydisqusWidget;">
+                @Html.Action("GetWidget", "Widget", new { Id = 4 })
+            </div>
+            @*End disqus.comComment*@
+            @*Start Local Db Commnet*@
+            <div style="display:@_DisplayLocalCommentWidget;">
+                @if (Request.IsAuthenticated)
+
+                {
+
+                    @Html.Action("AddNewComment", "Comment", new { Model.Post.PostId })
+                }
+               
+            </div>
+            @*End Local Db Commnet*@
+        </div>
+    </section>
+
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+     //to resize Images as img-reposive after erase inline css add new
+  $(document).ready(function() {
+      $('img').attr('style', 'max-width: 100%; height:auto;');
+
+  });
+    </script>
+
+
+}
+

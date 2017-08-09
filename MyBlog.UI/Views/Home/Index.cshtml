@@ -1,0 +1,102 @@
+﻿
+@model MyBlog.UI.Models.PostViewModel
+@using System.Configuration;
+   
+@{ 
+    string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
+    string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
+    string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
+    ViewBag.Title = "My Blog";
+}
+
+
+<div class="Bannerimage">
+    <img src="@Model.HomeImage" class="img-responsive" />
+    <div class="Bannertext">@Model.HomeImageText</div>
+</div>
+
+@*<div  id="HomepageNavTextimg">
+    <div class="HomePage-text-box container-fluid">
+        <h1 id="HomePage-h-text-box-img">
+           @Model.HomeImageText
+        </h1>
+    </div>
+    <img id="HomePage-Image_text" src="@Model.HomeImage" class="img-responsive" />
+</div>*@
+
+
+    <div class="container-fluid" style="margin-top:10px;" >@*body-content*@
+        <div class="col-md-2" >
+            <aside>
+
+
+
+                <div style="display:@_DisplayLastCategory;">
+                    @Html.Action("LastCategory", "Category")
+                </div>
+                <div style="display:@_DisplayLastPost;">
+                    @Html.Action("LastPost", "Post")
+                </div>
+
+               
+            </aside>
+        </div>@*End of aside row 2 Lift*@
+        <div class="col-md-8" >
+            <section>
+
+                @Html.Partial("_MainPagePost", Model.Posts)
+             
+
+            </section>
+
+            <div class="text-center">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+           
+        </ul>
+    </nav>
+</div>@*End of paging*@
+        </div>@*End of section row 1 Main (Posts)*@
+        <div class="col-md-2">
+            <aside>
+                
+                @*Start - Google Ads On Side*@
+
+                <div style="display:@_DisplayGoogleAdv;">
+                              
+                         @Html.Action("GetWidget", "Widget", new { Id = 3 })
+          
+                
+                 </div>
+                @*End - Google Ads On Side*@
+            </aside>
+        </div>@*End of aside row 3 Right Aside*@
+       
+
+    </div>@*End of Containt raw*@
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+ 
+<script src="~/scripts/jquery.dotdotdot.min.js"></script>
+
+
+ <script>
+     //to resize Images as img-reposive after erase inline css add new 
+  $(document).ready(function() {
+      $('img').attr('style', 'max-width: 100%; height:auto;');
+      $('.dot3').dotdotdot();
+  
+  });
+</script>
+
+
+}
+
+
+
+
+ 

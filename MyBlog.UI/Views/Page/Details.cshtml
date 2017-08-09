@@ -1,0 +1,46 @@
+﻿@model MyBlog.Data.Page
+@{
+    ViewBag.Title = Model.Title;
+
+
+}
+
+
+
+
+<div class="container-fluid body-content-pages">
+    <section class="container">
+        <div class="col-md-12">
+            <article class="post-preview">
+
+                <header class="modal-title">
+                    <h1>  @Model.Title </h1>
+                </header>
+                <hr />
+                <p class="post-subtitle">
+                    @Html.Raw(Model.PagesContent)
+                </p>
+                <hr />
+                <footer class="post-meta">
+                    <span class="fa fa-user" aria-hidden="true">by</span>
+                    <a href="~/User/Details/@Model.UserId">
+                        @Html.LabelFor(model => model.UserId, Model.UserDetail.FName + " " + Model.UserDetail.LName)
+
+
+                    </a>
+                    <span class="fa fa-calendar" aria-hidden="true"> on</span>
+                    @Model.Update_Time.ToShortDateString()
+
+                    <br />
+                   
+
+                </footer>
+            </article>
+            <hr>
+        </div>
+      
+    </section>
+   
+
+</div>
+
