@@ -7,3 +7,8 @@ C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (1
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Data\obj\Debug\MyBlog.Data.csprojResolveAssemblyReference.cache
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Data\obj\Debug\MyBlog.Data.dll
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Data\obj\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Data\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Data\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Data\obj\Debug\MyBlog.Data.csprojResolveAssemblyReference.cache
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Data\obj\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Data\obj\Debug\MyBlog.Data.pdb

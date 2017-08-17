@@ -3193,7 +3193,6 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
-    <Compile Include="Controllers\SampleObject.cs" />
     <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\UserController.cs" />
