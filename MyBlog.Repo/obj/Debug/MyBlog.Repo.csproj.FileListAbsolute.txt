@@ -40,3 +40,19 @@ C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBl
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csprojResolveAssemblyReference.cache
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.xml
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csprojAssemblyReference.cache
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.CoreCompileInputs.cache
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.CopyComplete
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb

@@ -1,19 +1,13 @@
 ﻿using Facebook;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.OAuth;
 using MyBlog.Data;
 using MyBlog.Service;
 using MyBlog.UI.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -21,7 +15,7 @@ using System.Web.Security;
 
 namespace MyBlog.UI.Controllers
 {
-    
+
     public class AccountController : Controller
     {
         private readonly IAuthentication repositoryIAuthentication;
@@ -365,15 +359,16 @@ namespace MyBlog.UI.Controllers
             mail.Subject = "Your Password";
             string HashUserPassword = repositoryDEncryption.Decrypt(Password);
             mail.Body = HashUserPassword;
-
-           // SmtpServer.Port = _emailsetting.SMTPServer_Port;
+            SmtpServer.UseDefaultCredentials = false;
+            SmtpServer.Port = _emailsetting.SMTPServer_Port;
             string HashEmailPassword = repositoryDEncryption.Decrypt(_emailsetting.Password);
-             SmtpServer.Credentials  = new NetworkCredential(_emailsetting.UserName, HashEmailPassword);
+            SmtpServer.Credentials = new NetworkCredential(_emailsetting.UserName, HashEmailPassword);
             NetworkCredential Credentials = new NetworkCredential(_emailsetting.Sender, HashEmailPassword);
             SmtpServer.Credentials = Credentials;
-            // SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
-            // SmtpServer.UseDefaultCredentials = true;
-            // SmtpServer.EnableSsl = _emailsetting.EnableSSL;
+
+            SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            SmtpServer.EnableSsl = _emailsetting.EnableSSL;
 
             SmtpServer.Send(mail);
         }

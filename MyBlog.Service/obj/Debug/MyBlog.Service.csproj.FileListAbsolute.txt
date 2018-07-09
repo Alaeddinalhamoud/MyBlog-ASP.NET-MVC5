@@ -19,3 +19,12 @@ C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBl
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.csprojResolveAssemblyReference.cache
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.dll
 C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\bin\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.csprojAssemblyReference.cache
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.csproj.CoreCompileInputs.cache
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.csproj.CopyComplete
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
